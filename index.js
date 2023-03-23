@@ -69,8 +69,6 @@ app.post('/api/createCheckoutSession', upload.none(), async (req, res) => {
       cancel_url: 'http://localhost:4000/api/cancel',
     });
 
-    console.log(session);
-
     res.redirect(303, session.url);
   } catch (err) {
     res.status(400).json({
